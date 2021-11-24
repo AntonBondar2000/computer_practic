@@ -27,10 +27,6 @@
                 <input type="text" id="input_rate" v-model="rate">
                 <p>Процентная ставка</p>
             </div>
-            <div class="block-input">
-                <input type="text" id="input_first_pay" v-model="first_pay">
-                <p>Первоначальный взнос</p>
-            </div>
         </div>
         <div class="result">
             <p class="result__all">
