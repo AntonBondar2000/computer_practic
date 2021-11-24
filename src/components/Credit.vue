@@ -7,13 +7,25 @@
                 </p>
             </div>
             <div class="block-input">
-                <input type="text" id="input_amount" v-model="amount" @blur="inputBlur" @focus="inputFocus" @keyup="inputKeyup">
+                <input 
+                    type="text" 
+                    id="input_amount" 
+                    v-model="amount" 
+                    @blur="inputBlur" 
+                    @focus="inputFocus" 
+                    @keyup="inputKeyup"
+                >
                 <p>Сумма</p>
             </div>
             
             <div class="calculate_date">
                 <div class="block-input">
-                    <input type="text" id="input_period" v-model="period" @keyup="periodKeyup">
+                    <input 
+                        type="text" 
+                        id="input_period" 
+                        v-model="period" 
+                        @keyup="periodKeyup"
+                    >
                     <p>Срок</p>
                 </div>
                 <select id="input_type_period" v-model="period_type">
@@ -24,7 +36,12 @@
                 </select>
             </div>
             <div class="block-input">
-                <input type="text" id="input_rate" v-model="rate" @keyup="rateKeyup">
+                <input 
+                    type="text" 
+                    id="input_rate" 
+                    v-model="rate" 
+                    @keyup="rateKeyup"
+                >
                 <p>Процентная ставка</p>
             </div>
         </div>
@@ -170,12 +187,9 @@ main{
                 cursor: pointer;
                 margin-left: 20px;
                 border: 0;
-                -webkit-appearance: none;
-                -moz-appearance: none;
                 appearance: none;
             }
         }
-        
     }
     .result{
         height: 60%;
@@ -189,7 +203,6 @@ main{
         p{
             font-size: 21px;
             color: black;
-            
         }
         button{
             cursor: pointer;

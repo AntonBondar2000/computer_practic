@@ -189,12 +189,9 @@ main{
                 outline: none;
                 cursor: pointer;
                 margin-left: 20px;
-                -webkit-appearance: none;/* Chrome */
-                -moz-appearance: none;/* Firefox */
-                appearance: none;/* убираем дефолнтные стрелочки */
+                appearance: none;
             }
         }
-        
     }
     .result{
         height: 60%;
@@ -207,8 +204,7 @@ main{
         justify-content: space-between;
         p{
             font-size: 21px;
-            color: black;
-            
+            color: black;  
         }
         button{
             cursor: pointer;

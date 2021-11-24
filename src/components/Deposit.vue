@@ -163,12 +163,9 @@ main{
                 outline: none;
                 cursor: pointer;
                 margin-left: 20px;
-                -webkit-appearance: none;/* Chrome */
-                -moz-appearance: none;/* Firefox */
-                appearance: none;/* убираем дефолнтные стрелочки */
+                appearance: none;
             }
         }
-        
     }
     .result{
         height: 60%;

@@ -85,5 +85,6 @@ export default {
 	width: 80%;
 	height: 700px;
 	background: #778899;
+	border-radius: 0 14px 14px 14px;
 }
 </style>
