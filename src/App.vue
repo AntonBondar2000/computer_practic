@@ -57,19 +57,19 @@ export default {
 	width: 80%;
 	display: flex;
 	&__item{
-		background-color: rgba(128, 128, 128);
+		background-color: rgba(0,0,0, .7);
 		padding: 32px 50px 32px 50px;
 		border-radius: 15px 15px 0 0;
-		color: black;
+		color: white;
 		transition-duration: .3s;
 		cursor: pointer;
 		&:hover{
-			background-color: #778899;
+			background-color: #FAFF00B2;
 			color: black;
 		}
 	}
 	.active{
-		background-color: #778899;
+		background-color: #FAFF00B2;
 		color: black;
 	}
 }
@@ -84,6 +84,6 @@ export default {
 .main_form{
 	width: 80%;
 	height: 700px;
-	background: #778899;
+	background: #FAFF00;
 }
 </style>

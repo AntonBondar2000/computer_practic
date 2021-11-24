@@ -30,13 +30,19 @@
         </div>
         <div class="result">
             <p class="result__all">
-                Начисленные проценты: {{ sum_all }}
+                Сумма выплат: {{ sum_all }}
+            </p>
+            <p class="result__every_mounth">
+                Ежемесячный платеж: {{ every_month }}
+            </p>
+            <p class="result__overpayment">
+                Переплата: {{ overpayment }}
             </p>
             <button 
                 class="calculate_button" 
                 @click="considerCredit"
             >
-                Рассчитать вклад
+                Рассчитать кредит
             </button>
         </div>
     </main>
@@ -75,11 +81,11 @@ export default {
             this.errors = []
             this.validateInput()
             if (this.errors.length == 0){
-                let rate = this.rate / 100 / 12 
+                let rate = this.rate / 100 / 12
                 const tmp = Math.pow(1 + rate, this.period * this.period_type)
-                const res = this.amount * tmp 
+                const res = this.amount * rate * tmp / (tmp - 1) 
                 this.sum_all = this.displayMoney(
-                    res - this.amount
+                    res * this.period * this.period_type
                 )
                 this.every_month = this.displayMoney(res)
                 this.overpayment = this.displayMoney(
