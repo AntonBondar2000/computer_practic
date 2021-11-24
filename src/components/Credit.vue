@@ -7,7 +7,7 @@
                 </p>
             </div>
             <div class="block-input">
-                <input type="text" id="input_amount" v-model="amount" @blur="inputBlur" @focus="inputFocus" @keyup="inputKeyup" >
+                <input type="text" id="input_amount" v-model="amount" @blur="inputBlur" @focus="inputFocus" @keyup="inputKeyup">
                 <p>Сумма</p>
             </div>
             

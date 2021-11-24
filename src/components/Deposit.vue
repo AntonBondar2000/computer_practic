@@ -7,13 +7,13 @@
                 </p>
             </div>
             <div class="block-input">
-                <input type="text" id="input_amount" v-model="amount">
+                <input type="text" id="input_amount" v-model="amount" @blur="inputBlur" @focus="inputFocus" @keyup="inputKeyup">
                 <p>Сумма</p>
             </div>
             
             <div class="calculate_date">
                 <div class="block-input">
-                    <input type="text" id="input_period" v-model="period">
+                    <input type="text" id="input_period" v-model="period" @keyup="periodKeyup">
                     <p>Срок</p>
                 </div>
                 <select id="input_type_period" v-model="period_type">
@@ -24,7 +24,7 @@
                 </select>
             </div>
             <div class="block-input">
-                <input type="text" id="input_rate" v-model="rate">
+                <input type="text" id="input_rate" v-model="rate" @keyup="rateKeyup">
                 <p>Процентная ставка</p>
             </div>
         </div>
@@ -71,8 +71,24 @@ export default {
         displayMoney(x){
             return parseInt(x * 100) / 100
         },
+        inputBlur(){
+            this.amount = this.amount.replace(/[^\d]/g, '').replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ')
+        },
+        inputFocus(){
+            this.amount = this.amount.replace(/\s/g, '')
+        },
+        inputKeyup(){
+            this.amount = this.amount.replace(/[^\d]/g, '')
+        },
+        rateKeyup(){
+            this.rate = this.rate.replace(/[^\d]/g, '')
+        },
+        periodKeyup(){
+            this.period = this.period.replace(/[^\d]/g, '')
+        },
         considerCredit(){
             this.errors = []
+            this.inputFocus()
             this.validateInput()
             if (this.errors.length == 0){
                 let rate = this.rate / 100 / 12 
@@ -86,6 +102,7 @@ export default {
                     res * this.period * this.period_type - this.amount
                 )
             }
+            this.inputBlur()
         },
     }
 }
@@ -149,6 +166,15 @@ main{
             }
         }
         
+    }
+    #input_type_period{
+        display: block;
+        width: 100%; /* от ширины блока div */
+        border-radius: 25px;/* скругление полей формы */
+        -webkit-appearance: none;/* Chrome */
+        -moz-appearance: none;/* Firefox */
+        appearance: none;/* убираем дефолнтные стрелочки */
+        font-family: inherit;/* наследует от родителя */
     }
     .result{
         height: 60%;
