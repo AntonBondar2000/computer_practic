@@ -22,7 +22,6 @@
                     <option value=12>Год</option>
                     <option value=3>Квартал</option>
                 </select>
-                
             </div>
             <div class="block-input">
                 <input type="text" id="input_rate" v-model="rate" @keyup="rateKeyup">
@@ -170,18 +169,13 @@ main{
                 outline: none;
                 cursor: pointer;
                 margin-left: 20px;
+                border: 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
             }
         }
         
-    }
-    #input_type_period{
-        display: block;
-        width: 100%; /* от ширины блока div */
-        border-radius: 25px;/* скругление полей формы */
-        -webkit-appearance: none;/* Chrome */
-        -moz-appearance: none;/* Firefox */
-        appearance: none;/* убираем дефолнтные стрелочки */
-        font-family: inherit;/* наследует от родителя */
     }
     .result{
         height: 60%;
