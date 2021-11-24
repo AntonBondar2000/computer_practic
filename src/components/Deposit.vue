@@ -163,18 +163,12 @@ main{
                 outline: none;
                 cursor: pointer;
                 margin-left: 20px;
+                -webkit-appearance: none;/* Chrome */
+                -moz-appearance: none;/* Firefox */
+                appearance: none;/* убираем дефолнтные стрелочки */
             }
         }
         
-    }
-    #input_type_period{
-        display: block;
-        width: 100%; /* от ширины блока div */
-        border-radius: 25px;/* скругление полей формы */
-        -webkit-appearance: none;/* Chrome */
-        -moz-appearance: none;/* Firefox */
-        appearance: none;/* убираем дефолнтные стрелочки */
-        font-family: inherit;/* наследует от родителя */
     }
     .result{
         height: 60%;
